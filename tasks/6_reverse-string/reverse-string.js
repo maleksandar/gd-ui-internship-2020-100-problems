@@ -1,3 +1,3 @@
-export function reverseString(niz){
-    return [...niz].reverse().join('');
+export function reverseString(niz) {
+  return [...niz].reverse().join('');
 }

@@ -1,3 +1,3 @@
-export function cloneArr(arr){
-    return [...arr];
+export function cloneArr(arr) {
+  return [...arr];
 }
