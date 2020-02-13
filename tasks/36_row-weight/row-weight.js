@@ -1,6 +1,13 @@
 export function rowWeights(weights) {
-  return weights.reduce(([team1, team2], item, index) => {
-            index % 2 ? team2 += item : team1 += item;
-            return [team1, team2];
-  }, [0, 0]);
+  const team1Weights = weights.filter((weight, index) => {
+    return !(index % 2);
+  });
+  const team2Weights = weights.filter((weight, index) => {
+    return (index % 2);
+  });
+
+  const sumOfTeam1Weights = team1Weights.reduce((a, b) => a + b, 0);
+  const sumOfTeam2Weights = team2Weights.reduce((a, b) => a + b, 0);
+
+  return [sumOfTeam1Weights, sumOfTeam2Weights];
 }
