@@ -2,7 +2,7 @@ export function checkLetters([firstArray, secondArray]) {
   return secondArray
       .toLowerCase()
       .split('')
-      .reduce((acc, character) => { 
+      .reduce((acc, character) => {
         return acc && isCharacterContainedInArray(character, firstArray);
       }, true);
 
