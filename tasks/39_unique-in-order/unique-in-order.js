@@ -3,13 +3,17 @@ export function uniqueInOrder(sequence) {
     sequence = sequence.split('');
   }
 
-  if (sequence.length === 0) return [];
+  const n = sequence.length;
 
-  return sequence.reduce((acc, item) => {
-    let lastInAcc = acc.slice(-1)[0];
-    if (lastInAcc !== item) {
-      acc.push(item);
-    }
-    return acc;
-  }, [sequence[0]]);
+  if (n === 0) return [];
+
+  const uniqueInOrderArray = [sequence[0]];
+
+  for (let i = 1; i < n; i++) {
+    const prev = sequence[i - 1];
+    const curr = sequence[i];
+    prev != curr && uniqueInOrderArray.push(curr);
+  }
+
+  return uniqueInOrderArray;
 }
