@@ -1,3 +1,3 @@
 export function convertToF(temp) {
-  return temp*9/5 + 32;
+  return temp * 9 / 5 + 32;
 }

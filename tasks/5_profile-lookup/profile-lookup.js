@@ -1,5 +1,3 @@
-
-
 export function lookupProfile(firstName, prop) {
   const people = [{
     firstName: 'Kristian',
