@@ -1,23 +1,50 @@
 export function findFriend(line) {
-  let n = line.length;
-  let numOfPossiblyFriends = 0;
-  for (let i = 0; i < n; i++) {
-    if (line[i] === 'red') {
-      if (i != 0 || i != 1) {
-        if (line[i-1] === 'blue' && line[i-2] === 'blue') {
-          numOfPossiblyFriends++;
-        } else if (i != 0 || i != n-1) {
-          if (line[i-1] === 'blue' && line[i+1] === 'blue') {
-            numOfPossiblyFriends++;
-          } else if (i != n-1 || i != n-2) {
-            if (line[i+1] === 'blue' && line[i+2] === 'blue') {
-              numOfPossiblyFriends++;
-            }
-          }
-        }
-      }
-    }
+  const redPersonsIndexes = getAllIndexes(line, 'red');
+
+  return redPersonsIndexes.filter((index) => {
+    return inBetweenTwoBluePersons(index)
+        || nextTwoAreBluePersons(index)
+        || previousTwoAreBluePersons(index);
+  }).length;
+
+  function inBetweenTwoBluePersons(index) {
+    return notAtFirstAndLastPosition(index) && surroundingPeopleAreBlue(index);
+  }
+  function notAtFirstAndLastPosition(index) {
+    return index !== 0 && index !== line.length - 1;
+  }
+  function surroundingPeopleAreBlue(index) {
+    return line[index - 1] === 'blue' && line[index + 1] === 'blue';
   }
 
-  return numOfPossiblyFriends;
+  function nextTwoAreBluePersons(index) {
+    return notAtTwoLastPositions(index) && nextTwoAreBlue(index);
+  }
+  function notAtTwoLastPositions(index) {
+    return index !== line.length - 1 && index !== line.length - 2;
+  }
+  function nextTwoAreBlue(index) {
+    return line[index + 1] === 'blue' && line[index + 2] === 'blue';
+  }
+
+  function previousTwoAreBluePersons(index) {
+    return notAtFirstTwoPositions(index) && previousTwoAreBlue(index);
+  }
+  function notAtFirstTwoPositions(index) {
+    return index !== 0 && index !== 1;
+  }
+  function previousTwoAreBlue(index) {
+    return line[index - 1] === 'blue' && line[index - 2] === 'blue';
+  }
+
+  function getAllIndexes(arr, val) {
+    let indexes = [];
+    let i = -1;
+
+    while ((i = arr.indexOf(val, i+1)) != -1) {
+      indexes.push(i);
+    }
+
+    return indexes;
+  }
 }
