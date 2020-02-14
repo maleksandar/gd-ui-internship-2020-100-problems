@@ -1,3 +1,9 @@
+let prev;
 export function randomFraction() {
-  return Math.random();
+  let curr = Math.random();
+  if (prev !== curr) {
+    prev = curr;
+    return curr;
+  }
+  return randomFraction();
 }
