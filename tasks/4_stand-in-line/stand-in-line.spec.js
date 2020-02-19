@@ -15,9 +15,9 @@ xdescribe('stand-in-line', () => {
 
     test('After nextInLine(testArr, 10), testArr[4] should return 10', () => {
         const testArr = [1, 2, 3, 4, 5];
-        
+
         nextInLine(testArr, 10);
-        
+
         expect(testArr[4]).toBe(10);
     });
 });
