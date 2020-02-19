@@ -1,3 +1,3 @@
 export const randomFraction = () => {
-  return Math.random() % 1;
+  return Math.random();
 };

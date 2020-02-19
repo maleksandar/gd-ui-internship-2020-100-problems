@@ -1,45 +1,21 @@
-export class God {
-  constructor() {
-
-  }
-
-  static create() {
+export const God = {
+  create() {
     return [new Man('Adam'), new Woman('Eve')];
-  }
+  },
+};
+
+export function Human(name, sex) {
+  this.name = name;
+  this.sex = sex;
 }
 
-export class Human {
-  constructor(name) {
-    this.name = name;
-  }
-
-  // TODO: Second way?
-  // constructor(name, sex) {
-  //   this.name = name;
-  //   this.sex = sex;
-  // }
+export function Man(name) {
+  Human.call(this, name, 'male');
 }
 
-export class Man extends Human {
-  constructor(name) {
-    super(name);
-    this.sex = 'male';
-  }
-
-  // TODO: Second way?
-  // constructor(name) {
-  //   super(name, 'male');
-  // }
+export function Woman(name) {
+  Human.call(this, name, 'female');
 }
 
-export class Woman extends Human {
-  constructor(name) {
-    super(name);
-    this.sex = 'female';
-  }
-
-  // TODO: Second way?
-  // constructor(name) {
-  //   super(name, 'female');
-  // }
-}
+Man.prototype = Object.create(Human.prototype);
+Woman.prototype = Object.create(Human.prototype);

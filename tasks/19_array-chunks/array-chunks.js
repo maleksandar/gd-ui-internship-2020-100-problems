@@ -1,8 +1,11 @@
 export const arrayChunks = (arr, size) => {
-  let res = [];
-  const n = arr.length;
+  if (size < 1) {
+    return arr;
+  }
 
-  for (let i = 0; i < n; i += size) {
+  let res = [];
+
+  for (let i = 0; i < arr.length; i += size) {
     res.push(arr.slice(i, i + size));
   }
 

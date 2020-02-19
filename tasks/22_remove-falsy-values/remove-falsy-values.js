@@ -1,4 +1,1 @@
-export const removeFalsyValues = (arr) => {
-  return arr.filter((elem) => ![false, null, 0, NaN, undefined, '']
-      .includes(elem));
-};
+export const removeFalsyValues = (arr) => arr.filter((elem) => elem);

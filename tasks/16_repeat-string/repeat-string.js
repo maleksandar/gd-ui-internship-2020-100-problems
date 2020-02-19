@@ -1,3 +1,3 @@
 export const repeatStringNumTimes = (string, numTimes) => {
-  return (numTimes < 0) ? '' : string.repeat(numTimes);
+  return (numTimes < 0 || string === '') ? '' : string.repeat(numTimes);
 };

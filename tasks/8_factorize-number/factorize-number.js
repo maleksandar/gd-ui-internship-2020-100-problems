@@ -1,9 +1,17 @@
-export const factorialize = (n) => {
-  let fact = 1;
+// export const factorialize = (n) => {
+//   let fact = 1;
+//
+//   for (let i = 2; i <= n; i++) {
+//     fact *= i;
+//   }
+//
+//   return fact;
+// };
 
-  for (let i = 2; i <= n; i++) {
-    fact *= i;
+export const factorialize = (n) => {
+  if (n === 0) {
+    return 1;
   }
 
-  return fact;
+  return factorialize(n - 1) * n;
 };

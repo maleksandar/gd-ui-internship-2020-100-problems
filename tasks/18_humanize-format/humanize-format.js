@@ -1,18 +1,18 @@
-export const humanizeFormat = (...args) => {
-  if (args.length === 0) {
+export const humanizeFormat = (number) => {
+  if (number === undefined) {
     return '';
   }
 
-  const number = args[0].toString();
-  const lastDigit = number.slice(-1);
+  const lastDigit = number % 10;
+  const lastTwoDigits = number % 100;
 
-  if (lastDigit === '1') {
-    return number.concat('st');
-  } else if (lastDigit === '2') {
-    return number.concat('nd');
-  } else if (lastDigit === '3') {
-    return number.concat('rd');
+  if (lastDigit === 1 && lastTwoDigits !== 11) {
+    return `${number}st`;
+  } else if (lastDigit === 2 && lastTwoDigits !== 12) {
+    return `${number}nd`;
+  } else if (lastDigit === 3 && lastTwoDigits !== 13) {
+    return `${number}rd`;
   }
 
-  return number.concat('th');
+  return `${number}th`;
 };

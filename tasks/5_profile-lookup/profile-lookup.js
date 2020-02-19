@@ -6,26 +6,15 @@ export const lookupProfile = (firstName, prop) => {
     {firstName: 'Akira'},
   ];
 
-  let propFound = false;
-  let contactFound = false;
-
   for (let contact of contacts) {
-    if (prop in contact) {
-      propFound = true;
-    }
-
     if (contact.firstName === firstName) {
-      contactFound = true;
-    }
-
-    if (propFound && contactFound) {
-      return contact[prop];
+      if (prop in contact) {
+        return contact[prop];
+      } else {
+        return 'No such property';
+      }
     }
   }
 
-  if (!contactFound) {
-    return 'No such contact';
-  } else if (!propFound) {
-    return 'No such property';
-  }
+  return 'No such contact';
 };
