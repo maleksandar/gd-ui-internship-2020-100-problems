@@ -1,6 +1,8 @@
 export function factorialize(n) {
-  let fac = 1;
-  for (let i = 2; i <= n; i++) fac *= i;
+  let factorial = 1;
+  for (let i = 2; i <= n; i++) {
+    factorial *= i;
+  }
 
-  return fac;
+  return factorial;
 }
