@@ -1,9 +1,5 @@
 
 
 export function getNumbers(text) {
-
-
-    return text.match(/\d+/g).map(elem => parseInt(elem));
-
-
+  return text.match(/\d+/g).map((elem) => parseInt(elem));
 }

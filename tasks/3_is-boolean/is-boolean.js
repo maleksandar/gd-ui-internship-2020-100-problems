@@ -1,8 +1,5 @@
 
 
-
 export function isBoolean(value) {
-
-    return (typeof value === "boolean");
-
+  return (typeof value === 'boolean');
 }

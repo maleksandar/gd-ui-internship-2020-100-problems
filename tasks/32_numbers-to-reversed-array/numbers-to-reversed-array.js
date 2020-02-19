@@ -1,14 +1,12 @@
 
 
 export function numberToReversedArray(number) {
+  let ret = [];
+  let arr = number.toString().split('');
 
-    let ret = [];
-    let arr = number.toString().split("");
+  arr.forEach((element) => {
+    ret.unshift(parseInt(element));
+  });
 
-    arr.forEach(element => {
-        ret.unshift(parseInt(element));
-    });
-
-    return ret;
-
+  return ret;
 }
