@@ -2,9 +2,8 @@
 
 export function getNumbers(text) {
 
-    var regex = /\d+/g;
 
-    return  text.match(regex).map(elem => parseInt(elem));
-   
+    return text.match(/\d+/g).map(elem => parseInt(elem));
+
 
 }

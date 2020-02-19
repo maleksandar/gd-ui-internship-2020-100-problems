@@ -1,11 +1,11 @@
 
 export function minNumberToPrime(arr) {
 
-    let sum = arr.reduce((acc, number) => acc + number ,0);
-    
+    let sum = arr.reduce((acc, number) => acc + number, 0);
+
     let number = 0;
 
-    while ( isPrime(sum + number) === false ) {
+    while (isPrime(sum + number) === false) {
         number++;
     }
 
@@ -15,8 +15,8 @@ export function minNumberToPrime(arr) {
 
 function isPrime(number) {
 
-    for (let i=2, s= Math.sqrt(number); i<=s; i++) 
-    if (number % i == 0) return false;
+    for (let i = 2, s = Math.sqrt(number); i <= s; i++)
+        if (number % i == 0) return false;
     return number > 1;
 
 }

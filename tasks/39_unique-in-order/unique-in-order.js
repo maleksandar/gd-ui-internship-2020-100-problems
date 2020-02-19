@@ -2,20 +2,17 @@
 
 
 export function uniqueInOrder(str) {
-    let arr;
-   if (typeof str ===  "string") {
-    arr = str.split("");
-   } else
-   arr = str;
+
+   if (str.length == 0) return [];
 
    let ret = [];
-   if (arr.length !== 0) {
-   ret.push(arr[0]);
 
-   for (let i=1; i<arr.length; i++) {
-    if (arr[i-1] !== arr[i] ) ret.push(arr[i]);
+   ret.push(str[0]);
+
+   for (let i = 1; i < str.length; i++) {
+      if (str[i - 1] !== str[i]) ret.push(str[i]);
    }
-}
+
    return ret;
 
 }

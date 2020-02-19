@@ -1,18 +1,15 @@
 
 
 export function checkLetters(array) {
-var first = array[0].toLowerCase();
 
-var second = array[1].toLowerCase();
+    let [first, second] = [array[0].toLowerCase(), array[1].toLowerCase()];
 
+    for (let i = 0; i < second.length; i++) {
 
-var i;
-for (i =0; i<second.length; i++) {
+        if (first.indexOf(second.charAt(i)) == -1) return false;
 
-var index = first.indexOf(second.charAt(i));
-if (index == -1) return false;
-
-}
-return true;
+    }
+    
+    return true;
 
 }

@@ -10,32 +10,32 @@ export class Human {
 }
 
 export class Man extends Human {
-   
-    constructor(sex, name) {
-        super(sex, name);
+
+    constructor(name) {
+        super('male', name);
     }
 
 }
 
 export class Woman extends Human {
-    constructor(sex, name) {
-        super(sex, name);
+    constructor(name) {
+        super('female', name);
     }
 }
 
 export class God {
 
-   
+
     static create() {
 
         let ret = [];
-        let adam = new Man('male', 'Adam');
-        let eve = new Woman('female', 'Eve');
+        let adam = new Man('Adam');
+        let eve = new Woman('Eve');
 
 
         ret.push(adam);
         ret.push(eve);
-    
+
         return ret;
 
     }
