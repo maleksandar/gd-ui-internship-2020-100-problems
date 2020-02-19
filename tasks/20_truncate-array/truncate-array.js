@@ -1,3 +1,3 @@
-export function truncateArray(array, n) {
-  return array.slice(n);
+export function truncateArray(array, fromIndex) {
+  return array.slice(fromIndex);
 }
