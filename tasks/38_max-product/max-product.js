@@ -5,11 +5,11 @@
 
 export function maxProduct(array) {
   const n = array.length;
-  const first = array.slice(0, n-1);
-  const second = array.slice(1, n);
+  const firstMultipliers = array.slice(0, n-1);
+  const secondMultipliers = array.slice(1, n);
 
-  const neighbors = first.map((num, index) => {
-    const num1 = second[index];
+  const neighbors = firstMultipliers.map((num, index) => {
+    const num1 = secondMultipliers[index];
     const num2 = num;
     return [num1, num2];
   });
