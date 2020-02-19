@@ -1,21 +1,21 @@
-export class Human {
-  constructor(name, sex) {
-    this.name = name;
-    this.sex = sex;
-  }
+export function Human(name, sex) {
+  this.name = name;
+  this.sex = sex;
 }
 
-export class Man extends Human {
-  constructor(name) {
-    super(name, 'male');
-  }
+export function Man(name) {
+  Human.call(this, name, 'male');
 }
 
-export class Woman extends Human {
-  constructor(name) {
-    super(name, 'female');
-  }
+Man.prototype = Object.create(Human.prototype);
+Man.prototype.constructor = Man;
+
+export function Woman(name) {
+  Human.call(this, name, 'female');
 }
+
+Woman.prototype = Object.create(Human.prototype);
+Woman.prototype.constructor = Woman;
 
 export const God = {
   create: () => [new Man('Adam'), new Woman('Eve')],
