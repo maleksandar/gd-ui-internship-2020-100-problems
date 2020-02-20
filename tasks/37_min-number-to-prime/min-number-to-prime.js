@@ -7,9 +7,9 @@ export function minNumberToPrime(arr) {
   return i;
 }
 
-const isPrime = (broj) => {
-  for (let i = 2; i<broj/2; i++) {
-    if (broj % i === 0) return false;
+const isPrime = (num) => {
+  for (let i = 2; i < num / 2; i++) {
+    if (num % i === 0) return false;
   }
   return true;
 };

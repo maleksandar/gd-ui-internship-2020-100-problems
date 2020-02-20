@@ -1,14 +1,11 @@
 export function arrayLeaders(arr) {
   let sum = 0;
   const res = [];
-  for (let i=0; i<arr.length; i++) {
-    for (let j=i+1; j< arr.length; j++) {
-      sum += arr[j];
-    }
+  for (let i=arr.length - 1; i >= 0; i--) {
     if (arr[i] > sum) {
-      res.push(arr[i]);
+      res.unshift(arr[i]);
     }
-    sum = 0;
+    sum += arr[i];
   }
   return res;
 }
