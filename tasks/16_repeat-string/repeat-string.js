@@ -1,9 +1,8 @@
 export function repeatStringNumTimes(str, num) {
-  if (num < 1) return '';
-  const base = str;
+  let resString = '';
   while (num > 1) {
-    str += base;
+    resString += str;
     num--;
   }
-  return str;
+  return resString;
 }
