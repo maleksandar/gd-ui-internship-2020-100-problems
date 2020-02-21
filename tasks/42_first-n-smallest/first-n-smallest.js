@@ -2,19 +2,16 @@ export function firstNSmallest(arr, n) {
   if (n === 0) return [];
 
   let nSmallest = [];
-  // Initial nSmallest array
   for (let i = 0; i < n; i++) {
     nSmallest.push(arr[i]);
   }
+  let maxInNSmallest = Math.max(...nSmallest);
 
   for (let i = n; i < arr.length; i++) {
-    // Finds curr largest element in nSmallest
-    let largestInN = nSmallest.
-        reduce((max, curr) => max > curr? max : curr);
-    if (arr[i] < largestInN) {
-    // Inserts new element at end and removes the largestInN
-      nSmallest.splice(nSmallest.lastIndexOf(largestInN), 1);
+    if (arr[i] < maxInNSmallest) {
+      nSmallest.splice(nSmallest.lastIndexOf(maxInNSmallest), 1);
       nSmallest.push(arr[i]);
+      maxInNSmallest = Math.max(...nSmallest);
     }
   }
   return nSmallest;
