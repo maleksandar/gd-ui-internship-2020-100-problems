@@ -17,7 +17,9 @@ export function Woman(name) {
 Woman.prototype = Object.create(Human.prototype);
 Woman.prototype.constructor = Woman;
 
-export const God = {
-  create: () => [new Man('Adam'), new Woman('Eve')],
-};
+export class God {
+  static create() {
+    return [new Man('Adam'), new Woman('Eve')];
+  }
+}
 
