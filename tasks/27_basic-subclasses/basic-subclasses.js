@@ -1,7 +1,7 @@
 export class God {
   static create() {
     const Adam = new Man("Adam", "male");
-    const Eve = new Women("Eve", "women");
+    const Eve = new Woman("Eve", "woman");
     return [Adam, Eve];
   }
 }
