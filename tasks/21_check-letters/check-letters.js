@@ -1,8 +1,8 @@
 export function checkLetters([firstString, secondString]) {
   return convertToArray(secondString)
-      .reduce((acc, character) => {
-        return acc && isCharacterContainedInArray(character, firstString);
-      }, true);
+      .every((character) => {
+        return isCharacterContainedInArray(character, firstString);
+      });
 
   function convertToArray(string) {
     return string.toLowerCase().split('');
