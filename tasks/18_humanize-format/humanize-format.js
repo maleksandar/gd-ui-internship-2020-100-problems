@@ -1,16 +1,16 @@
 export function humanizeFormat(num) {
   if (num === undefined) return '';
 
-  const firstDigit = num % 10;
-  const secondDigit = (num / 10) % 10;
+  const lastDigit = num % 10;
+  const secondLastDigit = num % 100;
 
-  switch (firstDigit) {
+  switch (lastDigit) {
     case 1:
-      return secondDigit === 1? num + 'th' : num + 'st';
+      return secondLastDigit === 11? num + 'th' : num + 'st';
     case 2:
-      return secondDigit === 1? num + 'th' : num + 'nd';
+      return secondLastDigit === 12? num + 'th' : num + 'nd';
     case 3:
-      return secondDigit === 1? num + 'th' : num + 'rd';
+      return secondLastDigit === 13? num + 'th' : num + 'rd';
     default:
       return num + 'th';
   }
