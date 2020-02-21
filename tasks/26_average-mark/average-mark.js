@@ -1,7 +1,8 @@
 export const getAverage = marks => {
-  let sum = marks.reduce(function(prev, elem) {
-    return prev + elem;
-  }, 0);
+  let sum = 0;
+  for (let i = 0; i < marks.length; i++) {
+    sum += marks[i];
+  }
 
   let average = sum / marks.length;
   return Math.floor(average);

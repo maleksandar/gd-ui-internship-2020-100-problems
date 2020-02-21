@@ -1,21 +1,7 @@
-export const maxProduct = arr => {
-  if (arr.length < 2) {
-    return;
+export const maxProduct = array => {
+  let max = array[0] * array[1];
+  for (let i = 1; i < array.length - 1; i++) {
+    max = Math.max(max, array[i] * array[i + 1]);
   }
-
-  let a = arr[0],
-    b = arr[1];
-
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = i + 1; j <= arr.length; j++) {
-      if (arr[i] * arr[j] > a * b) {
-        a = arr[i];
-        b = arr[j];
-        // console.log(a, b);
-      }
-      i++;
-    }
-  }
-
-  return a * b;
+  return max;
 };

@@ -1,27 +1,26 @@
 export class God {
   static create() {
-    const Adam = new Man();
-    const Eve = new Woman();
+    const Adam = new Man("Adam", "male");
+    const Eve = new Women("Eve", "women");
     return [Adam, Eve];
   }
 }
 
 export class Human {
-  constructor() {}
+  constructor(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
 }
 
 export class Man extends Human {
   constructor() {
     super();
-    this.name = "Adam";
-    this.sex = "male";
   }
 }
 
 export class Woman extends Human {
   constructor() {
     super();
-    this.sex = "female";
-    this.name = "Eve";
   }
 }

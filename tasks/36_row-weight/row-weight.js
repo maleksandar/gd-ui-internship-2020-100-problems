@@ -1,14 +1,14 @@
 export const rowWeights = arr => {
-  var oddWeights = [];
-  var evenWeights = [];
-  arr.forEach((el, i) => {
-    if (i % 2 !== 0) {
-      oddWeights.push(el);
+  let total1 = 0;
+  let total2 = 0;
+
+  for (let i = 0; i < arr.length; i += 2) {
+    let elem = arr[i];
+    if (i % 2 === 0) {
+      total1 += elem;
     } else {
-      evenWeights.push(el);
+      total2 += elem;
     }
-  });
-  oddWeights = oddWeights.reduce((a, b) => a + b, 0);
-  evenWeights = evenWeights.reduce((a, b) => a + b, 0);
-  return [evenWeights, oddWeights];
+  }
+  return [total1, total2];
 };

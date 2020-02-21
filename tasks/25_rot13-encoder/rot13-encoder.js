@@ -1,44 +1,15 @@
-var lookup = {
-  A: "N",
-  B: "O",
-  C: "P",
-  D: "Q",
-  E: "R",
-  F: "S",
-  G: "T",
-  H: "U",
-  I: "V",
-  J: "W",
-  K: "X",
-  L: "Y",
-  M: "Z",
-  N: "A",
-  O: "B",
-  P: "C",
-  Q: "D",
-  R: "E",
-  S: "F",
-  T: "G",
-  U: "H",
-  V: "I",
-  W: "J",
-  X: "K",
-  Y: "L",
-  Z: "M"
-};
-
-export const rot13Encoder = encodedStr => {
-  var codeArr = encodedStr.split(""); // String to Array
-  var decodedArr = []; // Your Result goes here
-  // Only change code below this line
-
-  decodedArr = codeArr.map(function(letter) {
-    if (lookup.hasOwnProperty(letter)) {
-      letter = lookup[letter];
+export const rot13 = str => {
+  str.toUpperCase();
+  var newStr = "";
+  for (i = 0; i < str.length; i++) {
+    var ch = str.charCodeAt(i);
+    if (ch < 65 || ch > 90) {
+      newStr += String.fromCharCode(ch);
+    } else if (ch >= 65 && ch <= 77) {
+      newStr += String.fromCharCode(str.charCodeAt(i) + 13);
+    } else if (ch >= 78 && ch <= 90) {
+      newStr += String.fromCharCode(str.charCodeAt(i) - 13);
     }
-    return letter;
-  });
-
-  // Only change code above this line
-  return decodedArr.join(""); // Array to String
+  }
+  return newStr;
 };
