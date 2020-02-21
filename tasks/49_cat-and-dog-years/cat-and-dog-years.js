@@ -1,6 +1,6 @@
 
-export function humanYearsCatYearsDogYears(humanYearsInput) {
-  let [humanYears, catYears, dogYears] = [humanYearsInput, 0, 0];
+export function humanYearsCatYearsDogYears(humanYears) {
+  let [catYears, dogYears] =[0, 0];
 
   switch (humanYears) {
     default: catYears += 4* (humanYears - 2); dogYears+= 5*(humanYears - 2);
