@@ -2,6 +2,10 @@ export const arrayChunks = (arr, divider) => {
   const chunkedArr = [];
   let i = 0;
 
+  if (arr.length === 0 || divider < 0) {
+    chunkedArr;
+  }
+
   while (i < arr.length) {
     chunkedArr.push(arr.slice(i, i + divider));
     i += divider;

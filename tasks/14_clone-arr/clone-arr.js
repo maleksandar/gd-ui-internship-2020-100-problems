@@ -3,9 +3,7 @@ export const cloneArr = arr => {
   if (arr.length === 0) {
     return copyArr;
   }
-  arr.forEach(element => {
-    copyArr.push(element);
-  });
+  copyArr = [...arr];
 
   return copyArr;
 };

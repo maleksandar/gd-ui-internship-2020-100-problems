@@ -1,27 +1,24 @@
-// export
 export const minNumberToPrime = arr => {
-  let higherPrime;
+  let primeNum;
   let counter = 0;
   let x;
 
   x = arr.reduce((a, b) => a + b, 0);
 
-  while (!higherPrime) {
-    if (!higherPrime) {
-      if (isPrime(x + counter)) {
-        higherPrime = x + counter;
-      }
+  while (!primeNum) {
+    if (isPrime(x + counter)) {
+      primeNum = x + counter;
     }
     counter++;
   }
-  return higherPrime - x;
+  return primeNum - x;
 };
 
-const isPrime = x => {
-  for (var i = 2; i < x; i++) {
-    if (x % i === 0) {
+const isPrime = num => {
+  for (var i = 2; i < num; i++) {
+    if (num % i === 0) {
       return false;
     }
   }
-  return x > 1;
+  return num > 1;
 };

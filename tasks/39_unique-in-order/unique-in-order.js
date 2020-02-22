@@ -1,10 +1,10 @@
-export const uniqueInOrder = iterableString => {
+export const uniqueInOrder = valuesToCheck => {
   var finalArray = [];
   var tempArray = [];
-  if (Array.isArray(iterableString) === false) {
-    tempArray = iterableString.split("");
+  if (Array.isArray(valuesToCheck) === false) {
+    tempArray = valuesToCheck.split("");
   } else {
-    tempArray = iterableString;
+    tempArray = valuesToCheck;
   }
   for (let i = 0; i < tempArray.length; i++) {
     if (tempArray[i] != tempArray[i - 1]) {
