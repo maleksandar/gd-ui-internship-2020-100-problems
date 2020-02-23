@@ -1,13 +1,13 @@
-export function factorialize(broj){
-    var fact=1;
-    if(broj===0){
-        return fact;
+export function factorialize(broj) {
+    let factorial = 1;
+
+    if (broj === 0) {
+        return factorial;
     }
 
-    while(broj>0){
-        fact*=broj;
-        broj--;
-    };
+    for (let i = broj; i > 0; i--) {
+        factorial *= i;
+    }
 
-    return fact;
+    return factorial;
 }

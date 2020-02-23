@@ -1,23 +1,23 @@
-export function golfScore(par, strokes){
-    if(strokes==1){
+export function golfScore(par, strokes) {
+    if (strokes === 1) {
         return GOLF_SCORES.HOLE_IN_ONE;
     }
-    else if(strokes<=par-2){
+    else if (strokes <= par - 2) {
         return GOLF_SCORES.EAGLE;
-    }   
-    else if(strokes<=par-1){
+    }
+    else if (strokes <= par - 1) {
         return GOLF_SCORES.BIRDIE;
-    } 
-    else if(par==strokes){
+    }
+    else if (par === strokes) {
         return GOLF_SCORES.PAR;
     }
-    else if(strokes==par+1){
+    else if (strokes === par + 1) {
         return GOLF_SCORES.BOGEY;
     }
-    else if(strokes==par+2){
+    else if (strokes === par + 2) {
         return GOLF_SCORES.DOUBLE_BOGEY;
     }
-    else if(strokes>=par+3){
+    else if (strokes >= par + 3) {
         return GOLF_SCORES.GO_HOME;
     }
 }

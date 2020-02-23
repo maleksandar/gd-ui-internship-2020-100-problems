@@ -1,9 +1,9 @@
-export function getAverage(arr){
-    let rez = 1;
+export function getAverage(array) {
     let zbir = 0;
-    for(let i=0; i<arr.length; i++){
-        zbir+=arr[i];
+
+    for (let i = 0; i < array.length; i++) {
+        zbir += array[i];
     }
-    rez = zbir/arr.length;
-    return Math.round(rez);
+
+    return Math.round(zbir / array.length);
 }

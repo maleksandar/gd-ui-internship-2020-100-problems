@@ -1,4 +1,3 @@
-export function getNumbers(str){
-    var numbers = str.match(/\d+/g).map(Number);
-    return numbers;
+export function getNumbers(str) {
+    return str.match(/\d+/g).map(Number);
 }

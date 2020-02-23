@@ -1,14 +1,21 @@
-export function findFriend(arr){
-    let numberOfFriends=0;
-    for(let i=0; i<arr.length; i++){
-        if(arr[i]==='red'){
-            if(arr[i-1]!==null && arr[i-2]!=null && arr[i-1]==='blue' && arr[i-2]==='blue')
+export function findFriend(array) {
+
+    let numberOfFriends = 0;
+
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i] === 'red') {
+            if (array[i - 1] !== null && array[i - 2] != null && array[i - 1] === 'blue' && array[i - 2] === 'blue') {
                 numberOfFriends++;
-            else if(arr[i-1]!==null && arr[i+1]!=null && arr[i-1]==='blue' && arr[i+1]==='blue')
+            }
+            else if (array[i - 1] !== null && array[i + 1] != null && array[i - 1] === 'blue' && array[i + 1] === 'blue') {
                 numberOfFriends++;
-            else if(arr[i+1]!==null && arr[i+2]!=null && arr[i+1]==='blue' && arr[i+2]==='blue')
+            }
+            else if (array[i + 1] !== null && array[i + 2] != null && array[i + 1] === 'blue' && array[i + 2] === 'blue') {
                 numberOfFriends++;
+            }
         }
     }
+
     return numberOfFriends;
 }

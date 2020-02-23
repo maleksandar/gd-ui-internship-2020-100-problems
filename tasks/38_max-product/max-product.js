@@ -1,9 +1,15 @@
-export function maxProduct(arr){
-    let max=arr[0]*arr[1];
-    for(let i=1; i<arr.length-1; i++){
-        let pr=1;
-        pr=arr[i]*arr[i+1];
-        if(pr>max) max=pr;
+export function maxProduct(array) {
+    let maxAdjacentNumber = array[0] * array[1];
+
+    for (let i = 1; i < array.length - 1; i++) {
+        let result = 1;
+
+        result = array[i] * array[i + 1];
+
+        if (result > maxAdjacentNumber) {
+            maxAdjacentNumber = result;
+        }
     }
-    return max;
+
+    return maxAdjacentNumber;
 }

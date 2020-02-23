@@ -1,9 +1,7 @@
-export function destroyer(){
+export function destroyer(array, ...arg){
+    let copiedArray = array.filter((value) => {
+        return arg.indexOf(value) === -1;
+    });
 
-    return arguments[0].filter(val => {
-        for(let i=1; i< arguments.length;i++){
-            if(val === arguments[i])return false;
-        }
-        return true;
-    })
+    return copiedArray;
 }

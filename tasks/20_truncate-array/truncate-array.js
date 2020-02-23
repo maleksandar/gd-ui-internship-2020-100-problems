@@ -1,5 +1,12 @@
-export function truncateArray(arr, n){
-    if(n>arr.length) return [];
-    if(n===0) return arr;
-    return arr.splice(n)
+export function truncateArray(arr, nElements) {
+
+    if (nElements > arr.length) {
+        return [];
+    }
+
+    if (nElements === 0) {
+        return arr;
+    }
+
+    return arr.slice(nElements);
 }

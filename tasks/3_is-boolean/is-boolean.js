@@ -1,8 +1,3 @@
-export function isBoolean(value){
-    if(value===true || value===false){
-        return true;
-    }
-    else{
-        return false;
-    }
+export function isBoolean(value) {
+    return typeof value === 'boolean';
 }

@@ -1,9 +1,15 @@
-export function arrayChunks(arr, size){
-    var niz = [];
-    
-    while (arr.length) {
-        niz.push(arr.splice(0, size));
+export function arrayChunks(array, sizeOfChunk) {
+
+    let niz = [];
+
+    for (let i = 0; i < array.length; i += sizeOfChunk) {
+        if (array.length < sizeOfChunk) {
+            niz.push(array.slice(i));
+        }
+        else {
+            niz.push(array.slice(i, i + sizeOfChunk));
+        }
     }
-    
+
     return niz;
 }

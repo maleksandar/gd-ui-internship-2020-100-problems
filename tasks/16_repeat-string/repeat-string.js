@@ -1,7 +1,7 @@
-export function repeatStringNumTimes(str, num){
-    if(num<0){
-        str = "";
-        return str;
+export function repeatStringNumTimes(str, numTimes) {
+    if (numTimes < 0) {
+        return '';
     }
-    return str.repeat(num);
+    
+    return str.repeat(numTimes);
 }

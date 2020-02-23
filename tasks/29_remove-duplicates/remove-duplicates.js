@@ -1,3 +1,3 @@
-export function removeDuplicates(arr){
-    return arr.filter((a, b) => arr.indexOf(a) === b)
+export function removeDuplicates(array) {
+    return array.filter((a, b) => array.indexOf(a) === b)
 }
