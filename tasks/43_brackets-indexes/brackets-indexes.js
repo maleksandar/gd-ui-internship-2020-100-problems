@@ -1,21 +1,18 @@
 export const findCloseIndex = (str, pos) => {
-  let openBracketCount = 0;
-  let givenBracketPosition = -1;
-  let index = -1;
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    if (char === "(") {
-      openBracketCount++;
-      if (i === pos) {
-        givenBracketPosition = openBracketCount;
-      }
-    } else if (char === ")") {
-      if (openBracketCount === givenBracketPosition) {
-        index = i;
-        break;
-      }
-      openBracketCount--;
+  if (str[pos] !== "(") {
+    throw new Error("The position must contain an opening bracket!");
+  }
+  let level = 1;
+  for (let i = pos + 1; i < str.length; i++) {
+    if (str[i] === "(") {
+      level++;
+    } else if (str[i] === ")") {
+      level--;
+    }
+
+    if (level === 0) {
+      return i;
     }
   }
-  return index;
+  return -1;
 };

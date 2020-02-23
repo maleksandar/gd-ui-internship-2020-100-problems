@@ -1,14 +1,12 @@
 export const findEqualIndex = arr => {
-  var leftSum = 0;
-  for (var i = 1; i < arr.length - 1; i++) {
-    leftSum += arr[i - 1];
-    var rightSum = 0;
-    for (var j = i; j < arr.length - 1; j++) {
-      rightSum += arr[j + 1];
-    }
+  let equalIndex = -1;
+  for (let i = 0; i < arr.length; i++) {
+    const leftSum = arr.slice(0, i).reduce((a, c) => a + c, 0);
+    const rightSum = arr.slice(i + 1).reduce((a, c) => a + c, 0);
     if (leftSum === rightSum) {
-      return i;
+      equalIndex = i;
+      break;
     }
   }
-  return -1;
+  return equalIndex;
 };

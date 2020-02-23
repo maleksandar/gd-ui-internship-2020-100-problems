@@ -10,8 +10,8 @@ export class SimTime {
   }
 
   update(time) {
-    this.oldTime = this.oldTime + (time - this.newTime) * this.simSpeed; //21
-    this.newTime = time; //15
+    this.oldTime = this.oldTime + (time - this.newTime) * this.simSpeed;
+    this.newTime = time;
   }
 
   setSpeed(speed) {

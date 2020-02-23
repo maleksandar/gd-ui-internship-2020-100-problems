@@ -1,8 +1,8 @@
 export const whatIsInAName = (collection, source) => {
   var arr = [];
   var keys = Object.keys(source);
-  arr = collection.filter(function(obj) {
-    return keys.every(function(key) {
+  arr = collection.filter(obj => {
+    return keys.every(key => {
       return obj.hasOwnProperty(key) && obj[key] === source[key];
     });
   });

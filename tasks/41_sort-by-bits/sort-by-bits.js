@@ -16,15 +16,11 @@ export const sortByBits = arr => {
       });
     }
   }
-  var compare = function(a, b) {
-    return a.numberOfOnes - b.numberOfOnes || a.intValue - b.intValue;
-  };
 
-  customArr.sort(compare);
+  customArr.sort((a, b) => {
+    return a.numberOfOnes - b.numberOfOnes || a.intValue - b.intValue;
+  });
 
   let result = customArr.map(el => el.intValue);
   return result;
 };
-
-// sortByBits([14, 8, 10, 12]);
-sortByBits([3, 8, 3, 6, 5, 7, 9, 1]);
