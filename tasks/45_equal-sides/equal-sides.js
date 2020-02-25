@@ -1,15 +1,18 @@
-export function findEqualIndex(array) {
-  const len = array.length;
-  for (let i = 0; i < len; i++) {
-    const leftSide = array.slice(0, i);
-    const rightSide = array.slice(i + 1, len);
-    const sumOfLeftSide = leftSide.reduce((a, b) => a + b, 0);
-    const sumOfRightSide = rightSide.reduce((a, b) => a + b, 0);
+function sumsOfPreviousElements(array) {
+  const sums = [0];
 
-    if (sumOfLeftSide === sumOfRightSide) {
-      return i;
-    }
+  for (let i = 0; i < array.length - 1; i++) {
+    sums.push(sums[i] + array[i]);
   }
 
-  return -1;
+  return sums;
+}
+
+export function findEqualIndex(array) {
+  const sumsFromLeftToRight = sumsOfPreviousElements(array);
+  const sumsFromRightToLeft = sumsOfPreviousElements([...array].reverse());
+
+  return sumsFromRightToLeft.reverse().findIndex((element, index) => {
+    return element === sumsFromLeftToRight[index];
+  });
 }
