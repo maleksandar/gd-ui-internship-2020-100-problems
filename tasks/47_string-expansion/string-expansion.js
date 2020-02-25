@@ -1,9 +1,8 @@
 export function stringExpansion(string) {
-  const len = string.length;
   let expansion = [];
   let number = 1;
 
-  for (let i = 0; i < len; i++) {
+  for (let i = 0; i < string.length; i++) {
     let currentChar = string[i];
     if (isFinite(currentChar)) {
       number = parseInt(currentChar);
