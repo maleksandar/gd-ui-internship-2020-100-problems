@@ -1,5 +1,5 @@
 export function followTheSpy(arrayOfRoutes) {
-  let mapOfRoutes = {};
+  let mapOfRoutes = Object.create(null);
   const start = arrayOfRoutes[0][0];
   let path = [start];
 
@@ -7,13 +7,13 @@ export function followTheSpy(arrayOfRoutes) {
     mapOfRoutes[from] = to;
   });
 
-  while (mapOfRoutes[lastElement(path)]) {
-    path.push(mapOfRoutes[lastElement(path)]);
+  while (mapOfRoutes[getLastElement(path)]) {
+    path.push(mapOfRoutes[getLastElement(path)]);
   }
 
   return path.join(', ');
+}
 
-  function lastElement(array) {
-    return array.slice(-1).pop();
-  }
+function getLastElement(array) {
+  return array.slice(-1).pop();
 }
