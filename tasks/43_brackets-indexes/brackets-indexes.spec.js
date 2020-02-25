@@ -1,4 +1,4 @@
-// import { findCloseIndex } from './brackets-indexes';
+//import { findCloseIndex } from './brackets-indexes';
 
 xdescribe('brackets-indexes', () => {
   it('should return correct values', () => {

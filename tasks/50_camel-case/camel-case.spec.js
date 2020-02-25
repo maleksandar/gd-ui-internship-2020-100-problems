@@ -1,4 +1,4 @@
-// import './camel-case';
+//import './camel-case';
 
 xdescribe('Camel case', () => {
 

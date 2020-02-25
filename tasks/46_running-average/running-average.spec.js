@@ -1,4 +1,4 @@
-// import { runningAverage } from './running-average';
+//import { runningAverage } from './running-average';
 
 xdescribe('running-average', () => {
     const rAvg = runningAverage();
