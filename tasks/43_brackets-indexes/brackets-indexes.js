@@ -12,7 +12,6 @@ export function findCloseIndex(string, position) {
       numOfOpenBrackets--;
     }
 
-
     if (numOfOpenBrackets === 0) {
       return i;
     }
