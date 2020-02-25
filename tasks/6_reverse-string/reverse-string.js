@@ -1,11 +1,9 @@
 export function reverseString(str) {
+  let newReversedString = '';
 
-    let newReversedString = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newReversedString += str[i];
+  }
 
-    for (let i = str.length - 1; i >= 0; i--) {
-        newReversedString += str[i];
-    }
-
-    return newReversedString;
-    
+  return newReversedString;
 }

@@ -1,12 +1,12 @@
 export function numberToReversedArray(broj) {
-    let niz = [];
+  let niz = [];
 
-    broj = broj + '';
-    broj = broj.split('').reverse();
+  broj = broj + '';
+  broj = broj.split('').reverse();
 
-    for (let i = 0; i < broj.length; i++) {
-        niz.push(parseInt(broj[i]));
-    }
-    
-    return niz;
+  for (let i = 0; i < broj.length; i++) {
+    niz.push(parseInt(broj[i]));
+  }
+
+  return niz;
 }
