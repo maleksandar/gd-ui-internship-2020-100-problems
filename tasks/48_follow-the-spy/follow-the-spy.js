@@ -1,11 +1,7 @@
 export function followTheSpy(travels) {
-  let travelsDict = {};
+  let travelsDict = getTravelsDict(travels);
   let currDest = travels[0][0];
   let result = [currDest];
-
-  travels.forEach((itinerary) => {
-    travelsDict[itinerary[0]] = itinerary[1];
-  });
 
   while (travelsDict.hasOwnProperty(currDest)) {
     currDest = travelsDict[currDest];
@@ -13,4 +9,14 @@ export function followTheSpy(travels) {
   }
 
   return result.join(', ');
+}
+
+function getTravelsDict(travels) {
+  const travelsDict = {};
+
+  travels.forEach((itinerary) => {
+    travelsDict[itinerary[0]] = itinerary[1];
+  });
+
+  return travelsDict;
 }

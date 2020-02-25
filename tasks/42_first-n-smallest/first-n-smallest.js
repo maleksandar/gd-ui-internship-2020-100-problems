@@ -5,14 +5,18 @@ export function firstNSmallest(arr, n) {
   for (let i = 0; i < n; i++) {
     nSmallest.push(arr[i]);
   }
-  let maxInNSmallest = Math.max(...nSmallest);
+  let maxInNSmallest = getMaxInNSmallest(nSmallest);
 
   for (let i = n; i < arr.length; i++) {
     if (arr[i] < maxInNSmallest) {
       nSmallest.splice(nSmallest.lastIndexOf(maxInNSmallest), 1);
       nSmallest.push(arr[i]);
-      maxInNSmallest = Math.max(...nSmallest);
+      maxInNSmallest = getMaxInNSmallest(nSmallest);
     }
   }
   return nSmallest;
+}
+
+function getMaxInNSmallest(arr) {
+  return Math.max(...arr);
 }

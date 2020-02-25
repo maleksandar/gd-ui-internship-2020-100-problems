@@ -12,7 +12,10 @@ export class SimTime {
     this.speed = speed;
   }
   update(realTime) {
-    this.time = this.time + (realTime - this.realTime) * this.speed;
+    const delta = realTime - this.realTime;
+    const deltaAccelerated = delta * this.speed;
+
+    this.time += deltaAccelerated;
     this.realTime = realTime;
   }
 }
