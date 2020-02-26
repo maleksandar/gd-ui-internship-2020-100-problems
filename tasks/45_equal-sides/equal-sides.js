@@ -1,3 +1,12 @@
+export function findEqualIndex(array) {
+  const sumsFromLeftToRight = sumsOfPreviousElements(array);
+  const sumsFromRightToLeft = sumsOfPreviousElements([...array].reverse());
+
+  return sumsFromRightToLeft.reverse().findIndex((element, index) => {
+    return element === sumsFromLeftToRight[index];
+  });
+}
+
 function sumsOfPreviousElements(array) {
   const sums = [0];
 
@@ -6,13 +15,4 @@ function sumsOfPreviousElements(array) {
   }
 
   return sums;
-}
-
-export function findEqualIndex(array) {
-  const sumsFromLeftToRight = sumsOfPreviousElements(array);
-  const sumsFromRightToLeft = sumsOfPreviousElements([...array].reverse());
-
-  return sumsFromRightToLeft.reverse().findIndex((element, index) => {
-    return element === sumsFromLeftToRight[index];
-  });
 }
