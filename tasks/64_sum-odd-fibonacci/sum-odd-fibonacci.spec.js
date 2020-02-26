@@ -1,6 +1,6 @@
-import { sumFibs } from './sum-odd-fibonacci';
+//import { sumFibs } from './sum-odd-fibonacci';
 
-describe('Sum All Odd Fibonacci Numbers', () => {
+xdescribe('Sum All Odd Fibonacci Numbers', () => {
 
     test('sumFibs(1) should return a number', () => {
         expect(typeof sumFibs(1)).toBe('number');
