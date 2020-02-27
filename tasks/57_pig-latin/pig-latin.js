@@ -11,6 +11,6 @@ export function translatePigLatin(word) {
 }
 
 function isVowel(letter) {
-  return 'aeiouAEIOU'.indexOf(letter) != -1;
+  return 'aeiouAEIOU'.indexOf(letter) !== -1;
 }
 
