@@ -1,4 +1,4 @@
-// import { insert } from './insert-string';
+import { insert } from './insert-string';
 
 xdescribe('Insert string', () => {
 

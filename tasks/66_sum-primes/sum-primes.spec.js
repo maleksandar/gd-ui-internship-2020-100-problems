@@ -1,4 +1,4 @@
-// import { sumPrimes } from './sum-primes';
+import { sumPrimes } from './sum-primes';
 
 xdescribe('Sum primes', () => {
 

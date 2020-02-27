@@ -1,4 +1,4 @@
-// import { binaryDecode } from './binary-decode';
+import { binaryDecode } from './binary-decode';
 
 export const TEST_BLOCKS = [
     {

@@ -1,4 +1,4 @@
-// import { spinalCase } from './spinal-case';
+import { spinalCase } from './spinal-case';
 
 xdescribe('Spinal case', () => {
 
