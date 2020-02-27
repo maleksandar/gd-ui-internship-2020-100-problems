@@ -1,4 +1,4 @@
-// import { pairElement } from './dna-pairing';
+//import { pairElement } from './dna-pairing';
 
 xdescribe('DNA pairing', () => {
 
