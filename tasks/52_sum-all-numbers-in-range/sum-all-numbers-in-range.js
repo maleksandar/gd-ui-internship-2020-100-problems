@@ -1,12 +1,7 @@
 export function sumAll([from, to]) {
-  to < from && ([from, to] = [to, from]);
-
-  let sum = from;
-
-  while (from < to) {
-    from += 1;
-    sum += from;
+  if (to < from) {
+    [from, to] = [to, from];
   }
 
-  return sum;
+  return (to - from + 1) * (to + from) / 2;
 }
