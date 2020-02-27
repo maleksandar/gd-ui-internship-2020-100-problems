@@ -3,7 +3,9 @@ export function uniteUnique(...arrays) {
 
   arrays.forEach((array) => {
     const numbersToPush = array.reduce((acc, number) => {
-      elementNotInArray(uniqueArray, number) && acc.push(number);
+      if (elementNotInArray(uniqueArray, number)) {
+        acc.push(number);
+      }
       return acc;
     }, []);
 
