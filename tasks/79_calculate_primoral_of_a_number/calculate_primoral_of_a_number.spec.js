@@ -1,4 +1,4 @@
-// import { numPrimorial } from './calculate_primoral_of_a_number';
+//import { numPrimorial } from './calculate_primoral_of_a_number';
 
 xdescribe('Calculate Primorial Of a Number', () => {
 
