@@ -17,10 +17,10 @@ export function convertToRoman(number) {
     I: 1,
   };
 
-  Object.keys(romanValues).forEach((roman) => {
-    const numberOfRepeat = Math.floor(number / romanValues[roman]);
-    number = number % romanValues[roman];
-    romanNumber += roman.repeat(numberOfRepeat);
+  Object.keys(romanValues).forEach((romanSymbol) => {
+    const numberOfRepeats = Math.floor(number / romanValues[romanSymbol]);
+    number = number % romanValues[romanSymbol];
+    romanNumber += romanSymbol.repeat(numberOfRepeats);
   });
 
   return romanNumber;
