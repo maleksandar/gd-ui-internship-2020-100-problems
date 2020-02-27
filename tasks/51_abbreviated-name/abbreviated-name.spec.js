@@ -1,4 +1,4 @@
-// import { abbreviated } from './abbreviated-name';
+//import { abbreviated } from './abbreviated-name';
 
 xdescribe('Abbreviated name', () => {
 

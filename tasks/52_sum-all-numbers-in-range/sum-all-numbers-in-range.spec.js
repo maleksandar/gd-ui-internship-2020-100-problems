@@ -1,4 +1,4 @@
-// import { sumAll } from './sum-all-numbers-in-range';
+//import { sumAll } from './sum-all-numbers-in-range';
 
 xdescribe('Summ all numbers in range', () => {
 
