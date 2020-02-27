@@ -1,4 +1,4 @@
-// import { sumPrimeIndexedElements } from './sum-of-prime-indexes';
+//import { sumPrimeIndexedElements } from './sum-of-prime-indexes';
 
 xdescribe('Sum of prime indexes', () => {
     

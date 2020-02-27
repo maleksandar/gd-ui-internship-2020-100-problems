@@ -1,4 +1,4 @@
-// import { palindrome } from './check-for-palindromes';
+//import { palindrome } from './check-for-palindromes';
 
 xdescribe('Check is palindrome', () => {
 
