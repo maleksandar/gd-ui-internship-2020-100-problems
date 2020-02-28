@@ -1,4 +1,4 @@
-// import { sym } from './symmertic-difference';
+//import { sym } from './symmertic-difference';
 
 xdescribe('Symmetric Difference', () => {
 
