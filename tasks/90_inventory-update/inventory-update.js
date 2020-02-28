@@ -1,4 +1,26 @@
 export const updateInventory = (arr1, arr2) => {
+  let concated = arr1.concat(arr2);
+  let object = {};
+  let result = [];
+
+  for (let i = 0; i < concated.length; i++) {
+    if (object[concated[i][1]]) {
+      object[concated[i][1]] += concated[i][0];
+    } else {
+      object[concated[i][1]] = concated[i][0];
+    }
+  }
+
+  for (let i of Object.keys(object)) {
+    result.push([object[i], i]);
+  }
+
+  result.sort((a, b) => (a[1] > b[1]));
+  return result;
+};
+
+// Alternative solution using map() and indexOf()
+export const updateInventory2 = (arr1, arr2) => {
   let currInventory = [];
   let newInventory = [];
 
