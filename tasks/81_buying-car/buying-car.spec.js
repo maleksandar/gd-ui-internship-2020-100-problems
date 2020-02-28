@@ -1,4 +1,4 @@
-// import { nbMonths } from './buying-car';
+//import { nbMonths } from './buying-car';
 
 xdescribe('Buying car', () => {
 
