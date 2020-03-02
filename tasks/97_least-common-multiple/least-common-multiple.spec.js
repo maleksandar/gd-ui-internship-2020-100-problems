@@ -1,4 +1,4 @@
-// import { leastCommonMultiple } from './least-common-multiple';
+//import { leastCommonMultiple } from './least-common-multiple';
 
 const cases = [
     { a: 6, b: 4, result: 12 },
