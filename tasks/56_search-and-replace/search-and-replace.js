@@ -1,10 +1,11 @@
 export function myReplace(str, before, after) {
+  let afterStr;
   if (isFirstLetterUpper(before)) {
-    after = after[0].toUpperCase() + after.slice(1);
+    afterStr = after[0].toUpperCase() + after.slice(1);
   } else {
-    after = after[0].toLowerCase() + after.slice(1);
+    afterStr = after[0].toLowerCase() + after.slice(1);
   }
-  return str.replace(before, after);
+  return str.replace(before, afterStr);
 }
 
 function isFirstLetterUpper(str) {

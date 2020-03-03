@@ -1,15 +1,15 @@
 export function translatePigLatin(str) {
-  let consonatCluster = '';
+  let consonantCluster = '';
 
   if (isVowel(str[0])) {
     return str + 'way';
   }
   for (let i = 0; i < str.length; i++) {
     if (!isVowel(str[i])) {
-      consonatCluster += str[i];
+      consonantCluster += str[i];
     } else {
-      const strWithoutConsonat = str.slice(consonatCluster.length);
-      return strWithoutConsonat + consonatCluster + 'ay';
+      const strWithoutConsonant = str.slice(consonantCluster.length);
+      return strWithoutConsonant + consonantCluster + 'ay';
     }
   }
 }
