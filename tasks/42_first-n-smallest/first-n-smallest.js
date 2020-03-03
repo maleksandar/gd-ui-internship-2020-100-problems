@@ -5,7 +5,7 @@ export function firstNSmallest(array, n) {
 
   copiedArray.sort((a, b) => a - b);
 
-  for (let i = 0; i < copiedArray.length && i < n; i++) {
+  for (let i = 0; i < n; i++) {
     smallestNumbers.push(copiedArray[i]);
   }
 
