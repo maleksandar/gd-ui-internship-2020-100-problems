@@ -8,7 +8,7 @@ export function smallestCommons(arr) {
 }
 
 function getGcd(a, b) {
-  if (b === 0) {
+  if (!b) {
     return a;
   }
   return getGcd(b, a % b);
