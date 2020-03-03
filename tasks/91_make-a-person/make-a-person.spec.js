@@ -3,10 +3,9 @@
 xdescribe('Make a person', () => {
     let bob;
 
-    beforeEach(() => {
-        bob = new Person('Bob Ross');
-    });
-
+ 
+    bob = new Person('Bob Ross');
+    
     test('bob instanceof Person', () => {
         expect(bob instanceof Person).toBe(true);
     });
