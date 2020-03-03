@@ -1,15 +1,15 @@
 export function smallestCommons(arr) {
-  arr = arr[0] < arr[1]? arr : [...arr].reverse();
-  let lcm = arr[0];
-  for (let i = arr[0] + 1; i < arr[1]; i++) {
-    lcm = (lcm * i) / getGdc(lcm, i);
+  const sortedArr = arr[0] < arr[1]? [...arr] : [...arr].reverse();
+  let lcm = sortedArr[0];
+  for (let i = sortedArr[0] + 1; i <= sortedArr[1]; i++) {
+    lcm = (lcm * i) / getGcd(lcm, i);
   }
   return lcm;
 }
 
-function getGdc(a, b) {
+function getGcd(a, b) {
   if (b === 0) {
     return a;
   }
-  getGdc(b, a % b);
+  return getGcd(b, a % b);
 }

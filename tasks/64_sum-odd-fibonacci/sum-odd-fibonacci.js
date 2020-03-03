@@ -1,14 +1,13 @@
 export function sumFibs(num) {
-  let first = 1;
-  let second = 1;
+  let prev = 1;
+  let next = 1;
   let sumOfFibs = 1;
-  while (num >= second) {
-    if (second % 2 === 1) {
-      sumOfFibs += second;
+  while (num >= next) {
+    if (next % 2 === 1) {
+      sumOfFibs += next;
     }
-    let temp = second;
-    second += first;
-    first = temp;
+    next += prev;
+    prev = next - prev;
   }
   return sumOfFibs;
 }
