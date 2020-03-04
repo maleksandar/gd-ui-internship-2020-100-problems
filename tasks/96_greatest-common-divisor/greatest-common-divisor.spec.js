@@ -1,4 +1,4 @@
-// import { greatestCommonDivisor } from './greatest-common-divisor';
+//import { greatestCommonDivisor } from './greatest-common-divisor';
 
 xdescribe('greatest-common-divisor', () => {
     test('greatestCommonDivisor(36, 45) should return 9', () => {
