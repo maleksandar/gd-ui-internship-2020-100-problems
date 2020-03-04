@@ -8,7 +8,7 @@ export function deepClone(object) {
   let clonedObject = {};
 
   for (const property in object) {
-    if (object instanceof Object ) {
+    if (typeof object[property] === 'object' && object[property] !== null) {
       clonedObject[property] = deepClone(object[property]);
     } else {
       clonedObject[property] = object[property];
